@@ -1,0 +1,44 @@
+@font-face {
+  font-family: guildof;
+  src: url("/client/assets/fonts/guildof.ttf");
+}
+header h1 {
+  font-family: guildof;
+  text-align: center;
+  font-size: 10vw;
+  position: relative;
+}
+header h3 {
+  text-align: center;
+  font-size: 2vw;
+  color: white;
+  position: inherit;
+}
+p {
+  text-align: center;
+  color: white;
+  font-size: 2vw;
+}
+
+body {
+  background-image: url("/client/assets/images/background.png");
+  background-size: cover;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  color: Green;
+  text-decoration: underline;
+}
+sup {
+  font-size: 2vw;
+}
+footer {
+    background-color: black;
+    padding: 2vw;
+    color: white;
+    text-align: center;
+    margin-top: 72vh
+}
