@@ -13,8 +13,9 @@
   z-index: 1000;
 }
 
-.sidebar.closed {
+.closed {
   transform: translateX(-250px);
+  left: -250px;
 }
 
 .sidebar-toggle {
@@ -33,10 +34,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.sidebar.closed + .sidebar-toggle {
-  left: 20px;
 }
 
 .sidebar-toggle:hover {

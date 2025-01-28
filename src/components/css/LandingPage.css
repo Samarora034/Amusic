@@ -2,6 +2,9 @@
   font-family: guildof;
   src: url("/src/assets/fonts/guildof.ttf");
 }
+*{
+  transition: background-color 0.25s ease;
+}
 
 .landing-container {
   min-height: 100vh;

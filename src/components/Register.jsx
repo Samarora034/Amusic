@@ -1,12 +1,13 @@
 import "./css/Register.css";
 import { Link } from "react-router-dom";
-import { useState } from "react"; // Added for form state management
-import { useTheme } from "../context/ThemeContext";
+import { useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { Darkmode } from "./Darkmode";
 
 function Register() {
-  const { darkMode } = useTheme();
+  const [darkMode, setDarkMode] = useState(false);
+
   // State to manage form data
   const [formData, setFormData] = useState({
     name: "",
@@ -61,7 +62,7 @@ function Register() {
 
   return (
     <div className={`page-container ${darkMode ? "dark-mode" : ""}`}>
-      <Navbar />
+      <Navbar setToggle = {setDarkMode}/>
       <div className={`register-container ${darkMode ? "dark-mode" : ""}`}>
         <h1>Create Your Account</h1>
         {/* Form with controlled components and submission handler */}

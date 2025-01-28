@@ -1,13 +1,20 @@
+import "./css/Navbar.css";
 import React from "react";
+import { useEffect } from "react";
+import { Darkmode } from "./Darkmode";
 import { Link } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
-import "./css/Navbar.css";
 
-function Navbar() {
+function Navbar({ setToggle }) {
   const { darkMode, toggleDarkMode } = useTheme();
+  useEffect(() => {
+    if (setToggle) {
+      setToggle(darkMode);
+    }
+  }, [darkMode]);
 
   return (
-    <nav className={`navbar ${darkMode ? "dark-mode" : ""}`}>
+    <nav className={`navbar`}>
       <div className="navbar-brand">
         <Link to="/" className="logo">
           Amusic
@@ -25,11 +32,7 @@ function Navbar() {
           </Link>
         </li>
       </ul>
-      <div className="theme-toggle">
-        <button onClick={toggleDarkMode} className="theme-toggle-btn">
-          <i className={`fas ${darkMode ? "fa-sun" : "fa-moon"}`}></i>
-        </button>
-      </div>
+      <Darkmode toggle={darkMode} setToggle={toggleDarkMode} />
     </nav>
   );
 }

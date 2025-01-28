@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "./Footer.jsx";
 import "./css/LandingPage.css";
 import { Link } from "react-router-dom";
+import { Darkmode } from "./Darkmode.jsx";
 
 function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -17,13 +18,7 @@ function Home() {
   return (
     <div className={`landing-container ${darkMode ? "dark-mode" : ""}`}>
       <header className="landing-header">
-        <div className="mode-toggle">
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="theme-toggle-btn">
-            <i className={`fas ${darkMode ? "fa-sun" : "fa-moon"}`}>dark mode</i>
-          </button>
-        </div>
+        <Darkmode toggle = {darkMode} setToggle = {setDarkMode}/>
         <h1>
           Amusic<sup style={{ fontSize: "1rem" }}>&copy;</sup>
         </h1>

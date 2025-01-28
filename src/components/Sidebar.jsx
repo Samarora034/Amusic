@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./css/Sidebar.css";
-
+import { GiHamburgerMenu } from "react-icons/gi";
 function Sidebar() {
     const [isOpen, setIsOpen] = useState(true);
 
@@ -12,9 +12,9 @@ function Sidebar() {
     return (
         <>
             <i 
-                className={`fas ${isOpen ? 'fa-times' : 'fa-bars'} sidebar-toggle`}
+                className={`fas ${isOpen ? 'open' : 'closed'} sidebar-toggle`}
                 onClick={toggleSidebar}
-            ></i>
+            ><GiHamburgerMenu/></i>
             <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
                 <div className="sidebar-header">
                     <h3>Your Library</h3>
