@@ -1,0 +1,93 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #c7621a;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand .logo {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+}
+
+.navbar-links li {
+  margin: 0 1rem;
+}
+
+.nav-link {
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #fff4e6;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .navbar-links li {
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-link {
+    padding: 0.8rem 0;
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Dark Mode Styles */
+.navbar.dark-mode {
+  background: #121212;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.dark-mode .logo,
+.navbar.dark-mode .nav-link {
+  color: #ffffff;
+}
+
+.navbar.dark-mode .nav-link:hover {
+  color: #dc6d1d;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  margin-left: 1rem;
+}
+
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1);
+}

@@ -1,0 +1,155 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #f4f4f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure body takes full height */
+}
+
+/* Register Container Styles */
+.register-container {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  animation: slideIn 1s ease-out;
+}
+
+/* Register Page Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Form Group Styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+/* Input and Select Styles */
+input,
+select {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9;
+  transition: border 0.3s ease, transform 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border: 1px solid #c7621a;
+  transform: scale(1.02);
+  outline: none;
+}
+
+/* Register Button Styles */
+button {
+  border: solid;
+  width: 100%;
+  padding: 1rem;
+  background: #c7621a;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+button:hover {
+  background: #dc6d1d;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #555;
+}
+
+/* Animations */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .register-container {
+    margin: 2rem;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+}
+
+/* Dark Mode Styles */
+.register-container.dark-mode {
+  background: #121212;
+  color: #ffffff;
+}
+
+.register-container.dark-mode input,
+.register-container.dark-mode select {
+  background: #2d2d2d;
+  color: #ffffff;
+  border-color: #404040;
+}
+
+.register-container.dark-mode input:focus,
+.register-container.dark-mode select:focus {
+  border-color: #dc6d1d;
+}
+
+.register-container.dark-mode .register-button {
+  background: #dc6d1d;
+  color: #ffffff;
+}
+
+.register-container.dark-mode .register-button:hover {
+  background: #c45c16;
+}

@@ -1,0 +1,250 @@
+@font-face {
+  font-family: guildof;
+  src: url("/src/assets/fonts/guildof.ttf");
+}
+
+.landing-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-header {
+  text-align: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, #c7621a, #e67e22);
+  color: #fff;
+  animation: fadeIn 1.5s ease;
+}
+
+.landing-header h1 {
+  font-family: guildof;
+  color: #fff;
+  font-size: 4.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.landing-header h3 {
+  font-size: 1.25rem;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.landing-main {
+  flex: 1;
+  padding: 2rem;
+  background: #f5f5f5;
+}
+
+.hero-section {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+}
+
+.hero-section h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-item {
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+}
+
+.feature-item i {
+  font-size: 2.5rem;
+  color: #c7621a;
+  margin-bottom: 1rem;
+}
+
+.feature-item h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.feature-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.cta-section {
+  background: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.primary-button {
+  background: #c7621a;
+  color: #fff;
+}
+
+.secondary-button {
+  background: transparent;
+  color: #c7621a;
+  border: 2px solid #c7621a;
+}
+
+.primary-button:hover {
+  background: #b55816;
+  transform: scale(1.05);
+}
+
+.secondary-button:hover {
+  background: #fff5eb;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-header h1 {
+    font-size: 3rem;
+  }
+
+  .landing-header h3 {
+    font-size: 1rem;
+  }
+
+  .hero-section h2 {
+    font-size: 2rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.dark-mode .landing-main {
+  background: #1a1a1a;
+}
+
+.dark-mode .hero-section h2 {
+  color: #fff;
+}
+
+.dark-mode .feature-item {
+  background: #2d2d2d;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .feature-item h4 {
+  color: #fff;
+}
+
+.dark-mode .feature-item p {
+  color: #ccc;
+}
+
+.dark-mode .cta-section {
+  background: #2d2d2d;
+  color: #fff;
+}
+
+.dark-mode .secondary-button {
+  color: #fff;
+  border-color: #fff;
+}
+
+.dark-mode .secondary-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Theme Toggle Button */
+.mode-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Additional Responsive Adjustments */
+@media (max-width: 480px) {
+  .landing-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .feature-item {
+    padding: 1.5rem;
+  }
+
+  .primary-button,
+  .secondary-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,158 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #121212;
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.closed {
+  transform: translateX(-250px);
+}
+
+.sidebar-toggle {
+  position: fixed;
+  left: 260px;
+  top: 20px;
+  background: #000000;
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar.closed + .sidebar-toggle {
+  left: 20px;
+}
+
+.sidebar-toggle:hover {
+  background: #dc6d1d;
+}
+
+/* Adjust main content to not overlap with sidebar */
+.main-content {
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.closed ~ .main-content {
+  margin-left: 0;
+}
+
+.sidebar-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #282828;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.playlists-section {
+  flex: 1;
+  margin-top: 20px;
+}
+
+.playlists-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.playlists-header h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.create-playlist-btn {
+  background: transparent;
+  border: none;
+  color: #b3b3b3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.create-playlist-btn:hover {
+  color: #ffffff;
+}
+
+.playlists-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.playlist-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  cursor: pointer;
+  color: #b3b3b3;
+  transition: color 0.2s ease;
+}
+
+.playlist-item:hover {
+  color: #ffffff;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #282828;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #b3b3b3;
+  text-decoration: none;
+  padding: 8px;
+  transition: color 0.2s ease;
+}
+
+.profile-link:hover {
+  color: #ffffff;
+}
+
+/* Dark Mode Styles */
+.sidebar.dark-mode {
+  background-color: #000000;
+}
+
+.sidebar.dark-mode .sidebar-toggle {
+  background: #1a1a1a;
+}
+
+.sidebar.dark-mode .create-playlist-btn,
+.sidebar.dark-mode .playlist-item,
+.sidebar.dark-mode .profile-link {
+  color: #808080;
+}
+
+.sidebar.dark-mode .create-playlist-btn:hover,
+.sidebar.dark-mode .playlist-item:hover,
+.sidebar.dark-mode .profile-link:hover {
+  color: #dc6d1d;
+}
