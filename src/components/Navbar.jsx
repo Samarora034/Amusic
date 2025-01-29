@@ -5,7 +5,7 @@ import { Darkmode } from "./Darkmode";
 import { Link } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 
-function Navbar({ setToggle }) {
+function Navbar({ setToggle, isHome }) {
   const { darkMode, toggleDarkMode } = useTheme();
   useEffect(() => {
     if (setToggle) {
@@ -16,7 +16,7 @@ function Navbar({ setToggle }) {
   return (
     <nav className={`navbar`}>
       <div className="navbar-brand">
-        <Link to="/" className="logo">
+        <Link to="/" className={`logo ${isHome?"home-logo":""}`}>
           Amusic
         </Link>
       </div>

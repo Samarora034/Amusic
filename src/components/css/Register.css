@@ -24,6 +24,9 @@ body {
   border-radius: 8px;
   animation: slideIn 1s ease-out;
 }
+.register-container h1{
+  color: #ffffff;
+}
 
 /* Register Page Heading */
 h1 {
@@ -65,7 +68,7 @@ select:focus {
 }
 
 /* Register Button Styles */
-button {
+.register-button {
   border: solid;
   width: 100%;
   padding: 1rem;
@@ -79,11 +82,11 @@ button {
   transition: 0.5s ease;
 }
 
-button:hover {
+.register-button:hover {
   background: #dc6d1d;
 }
 
-button:active {
+.register-button:active {
   transform: scale(0.98);
 }
 

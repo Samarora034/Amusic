@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./css/Sidebar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
+
 function Sidebar() {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleSidebar = () => {
         setIsOpen(!isOpen);
@@ -14,10 +16,11 @@ function Sidebar() {
             <i 
                 className={`fas ${isOpen ? 'open' : 'closed'} sidebar-toggle`}
                 onClick={toggleSidebar}
-            ><GiHamburgerMenu/></i>
+            >{isOpen?<IoMdClose/>:<GiHamburgerMenu/>}</i>
             <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
                 <div className="sidebar-header">
                     <h3>Your Library</h3>
+
                 </div>
                 
                 <div className="playlists-section">

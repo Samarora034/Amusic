@@ -21,13 +21,13 @@
 .sidebar-toggle {
   position: fixed;
   left: 260px;
-  top: 20px;
+  top: 15px;
   background: #000000;
+  color: #ffffff;
   border: none;
-  color: white;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 20%;
   cursor: pointer;
   z-index: 1001;
   transition: all 0.3s ease;
@@ -142,14 +142,4 @@
   background: #1a1a1a;
 }
 
-.sidebar.dark-mode .create-playlist-btn,
-.sidebar.dark-mode .playlist-item,
-.sidebar.dark-mode .profile-link {
-  color: #808080;
-}
 
-.sidebar.dark-mode .create-playlist-btn:hover,
-.sidebar.dark-mode .playlist-item:hover,
-.sidebar.dark-mode .profile-link:hover {
-  color: #dc6d1d;
-}

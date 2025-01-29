@@ -197,7 +197,10 @@
 
 .dark-mode .cta-section {
   background: #2d2d2d;
-  color: #fff;
+  color: #ffffff;
+}
+.dark-mode .cta-section h2 {
+  color: #ffffff;
 }
 
 .dark-mode .secondary-button {

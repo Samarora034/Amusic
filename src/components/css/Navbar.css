@@ -13,7 +13,9 @@
   font-weight: bold;
   text-decoration: none;
 }
-
+.home-logo{
+  margin-left:2rem;
+}
 .navbar-links {
   list-style: none;
   display: flex;

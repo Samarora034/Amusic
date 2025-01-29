@@ -10,7 +10,7 @@ function Home() {
 
   return (
     <div className={`home-container ${darkMode ? 'dark-mode' : ''}`}>
-      <Navbar />
+      <Navbar isHome={true}/>
       <div className="home-content">
         <Sidebar />
         <main className="main-content">
