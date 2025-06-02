@@ -1,6 +1,3 @@
-# Getting Started with Create React App
-
-
 # Amusic
 ## Music you found amusing :)
 
