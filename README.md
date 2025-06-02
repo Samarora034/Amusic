@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 
-         #Amusic
+#Amusic
 ##Music you found amusing :)
 
 ##live link: https://amusic-peach.vercel.app/
