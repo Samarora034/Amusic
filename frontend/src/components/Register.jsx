@@ -4,65 +4,33 @@ import { useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Darkmode } from "./Darkmode";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [darkMode, setDarkMode] = useState(false);
 
-  // State to manage form data
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    dob: "",
-    gender: "",
-  });
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const navigate = useNavigate();
 
-  // Handle input changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission
-
-    // Basic validation
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
-
-    try {
-      // Example API call - replace with your actual API endpoint
-      const response = await fetch("/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        // Handle successful registration
-        console.log("Registration successful!");
-        // Redirect to home page or login page
-      } else {
-        // Handle registration error
-        console.error("Registration failed");
-      }
-    } catch (error) {
-      console.error("Error during registration:", error);
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:3001/register", {
+        name,
+        email,
+        password,
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err))
+      navigate("/login");
   };
 
   return (
     <div className={`page-container ${darkMode ? "dark-mode" : ""}`}>
-      <Navbar setToggle = {setDarkMode}/>
+      <Navbar setToggle={setDarkMode} />
       <div className={`register-container ${darkMode ? "dark-mode" : ""}`}>
         <h1>Create Your Account</h1>
         {/* Form with controlled components and submission handler */}
@@ -73,8 +41,7 @@ function Register() {
               type="text"
               id="name"
               name="name"
-              value={formData.name}
-              onChange={handleChange}
+              onChange={(e) => setName(e.target.value)}
               placeholder="Enter your full name"
               required
             />
@@ -85,8 +52,7 @@ function Register() {
               type="email"
               id="email"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               required
             />
@@ -97,48 +63,10 @@ function Register() {
               type="password"
               id="password"
               name="password"
-              value={formData.password}
-              onChange={handleChange}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
               required
             />
-          </div>
-          <div className="form-group">
-            <label htmlFor="confirmPassword">Confirm Password</label>
-            <input
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              placeholder="Confirm your password"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="dob">Date of Birth</label>
-            <input
-              type="date"
-              id="dob"
-              name="dob"
-              value={formData.dob}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="gender">Gender</label>
-            <select
-              id="gender"
-              name="gender"
-              value={formData.gender}
-              onChange={handleChange}
-              required>
-              <option value="">Select your gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-            </select>
           </div>
           {/* Submit button wrapped in Link component */}
           <button type="submit" className="register-button">

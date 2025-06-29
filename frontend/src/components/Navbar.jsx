@@ -20,18 +20,6 @@ function Navbar({ setToggle, isHome }) {
           Amusic
         </Link>
       </div>
-      <ul className="navbar-links">
-        <li>
-          <Link to="/home" className="nav-link">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/register" className="nav-link">
-            Register/Login
-          </Link>
-        </li>
-      </ul>
       <Darkmode toggle={darkMode} setToggle={toggleDarkMode} />
     </nav>
   );
