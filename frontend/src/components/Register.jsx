@@ -32,9 +32,9 @@ function Register() {
     <div className={`page-container ${darkMode ? "dark-mode" : ""}`}>
       <Navbar setToggle={setDarkMode} />
       <div className={`register-container ${darkMode ? "dark-mode" : ""}`}>
-        <h1>Create Your Account</h1>
         {/* Form with controlled components and submission handler */}
         <form onSubmit={handleSubmit}>
+        <h1>Create Your Account</h1>
           <div className="form-group">
             <label htmlFor="name">Full Name</label>
             <input

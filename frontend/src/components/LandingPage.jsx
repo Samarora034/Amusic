@@ -1,35 +1,39 @@
-import React, { useState, useEffect } from "react";
+/**
+ * Landing page component
+ */
+import React from "react";
 import Footer from "./Footer.jsx";
 import "./css/LandingPage.css";
 import { Link } from "react-router-dom";
-import { Darkmode } from "./Darkmode.jsx";
+import { useTheme } from "../context/ThemeContext";
+import { Darkmode } from "./Darkmode";
 
+/**
+ * Home function component
+ * @returns {JSX.Element}
+ */
 function Home() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    // Check system preference on mount
-    const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-    setDarkMode(prefersDark);
-  }, []);
+  const { darkMode, toggleDarkMode } = useTheme();
 
   return (
     <div className={`landing-container ${darkMode ? "dark-mode" : ""}`}>
+
+      {/* Header section with dark mode toggle button */}
       <header className="landing-header">
-        <Darkmode toggle = {darkMode} setToggle = {setDarkMode}/>
+        <Darkmode toggle={darkMode} setToggle={toggleDarkMode} />
         <h1>
           Amusic<sup style={{ fontSize: "1rem" }}>&copy;</sup>
         </h1>
         <h3>Music You Found Amusing</h3>
       </header>
-
+     
+      {/* Main section with hero section and CTA section */}
       <main className="landing-main">
         <section className="hero-section">
           <h2>Discover, Stream, and Share Your Favorite Music</h2>
           <p>Join millions of music lovers on Amusic and enjoy:</p>
 
+          {/* Features grid section */}
           <div className="features-grid">
             <div className="feature-item">
               <i className="fas fa-music"></i>
@@ -65,9 +69,11 @@ function Home() {
         </section>
       </main>
 
+      {/* Footer section */}
       <Footer />
     </div>
   );
 }
 
 export default Home;
+
