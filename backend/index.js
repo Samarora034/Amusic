@@ -6,7 +6,9 @@ const bcrypt = require("bcryptjs");
 const UserModel = require("./models/user");
 
 // Load environment variables from .env in root directory
-dotenv.config({ path: "../.env" });
+require("dotenv").config(); // Use Render's internal ENV system
+
+
 
 const app = express();
 
