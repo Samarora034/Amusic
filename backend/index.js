@@ -1,40 +1,60 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const dotenv = require("dotenv");
+const bcrypt = require("bcryptjs");
 const UserModel = require("./models/user");
+
+// Load environment variables from .env in root directory
+dotenv.config({ path: "../.env" });
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(
-  "mongodb+srv://sakshamarora034:ERXEZs6yLPbflC1F@cluster0.v1k7gqf.mongodb.net/user"
-);
+// MongoDB connection
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
-app.post("/login", (req, res) => {
-    const { email, password } = req.body;
-    UserModel.findOne({ email: email })
-      .then((user) => {
-        if (user) {
-          if (user.password === password) {
-            res.json({ message: "Login successful" });
-          } else {
-            res.json({ message: "Invalid password" });
-          }
-        } else {
-          res.json({ message: "User not found" });
-        }
-      })
-    })
-  
+// Login Route
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
 
-app.post("/register", (req, res) => {
-  UserModel.create(req.body)
-    .then((users) => res.json(users))
-    .catch((err) => res.json(err));
+  try {
+    const user = await UserModel.findOne({ email });
+
+    if (!user) {
+      return res.json({ message: "User not found" });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.json({ message: "Invalid password" });
+    }
+
+    res.json({ message: "Login successful" });
+  } catch (error) {
+    console.error(error);
+    res.json({ message: "Error during login", error });
+  }
 });
 
-app.listen(3001, () => {
-  console.log("Server is running on port 3001");
+// Register Route
+app.post("/register", async (req, res) => {
+  try {
+    const user = await UserModel.create(req.body);
+    res.json(user);
+  } catch (err) {
+    res.json({ message: "Registration failed", error: err });
+  }
+});
+
+// Server
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

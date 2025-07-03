@@ -86,7 +86,6 @@ select:focus {
   transform: scale(0.98);
 }
 
-
 /* Animations */
 @keyframes slideIn {
   0% {
@@ -150,3 +149,5 @@ select:focus {
 .register-container.dark-mode h1 {
   color: white;
 }
+
+

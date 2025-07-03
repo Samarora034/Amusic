@@ -1,40 +1,44 @@
 import "./css/Register.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { Darkmode } from "./Darkmode";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [darkMode, setDarkMode] = useState(false);
-
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:3001/register", {
+    try {
+      const res = await axios.post("http://localhost:3001/register", {
         name,
         email,
         password,
-      })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err))
-      navigate("/login");
+      });
+
+      if (res.data && res.data._id) {
+        alert("Registration successful!");
+        navigate("/login");
+      } else {
+        alert("Registration failed or email already in use.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("An error occurred during registration.");
+    }
   };
 
   return (
     <div className={`page-container ${darkMode ? "dark-mode" : ""}`}>
       <Navbar setToggle={setDarkMode} />
       <div className={`register-container ${darkMode ? "dark-mode" : ""}`}>
-        {/* Form with controlled components and submission handler */}
         <form onSubmit={handleSubmit}>
-        <h1>Create Your Account</h1>
+          <h1>Create Your Account</h1>
           <div className="form-group">
             <label htmlFor="name">Full Name</label>
             <input
@@ -68,7 +72,6 @@ function Register() {
               required
             />
           </div>
-          {/* Submit button wrapped in Link component */}
           <button type="submit" className="register-button">
             Register
           </button>
