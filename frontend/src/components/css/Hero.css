@@ -1,0 +1,64 @@
+/* frontend/src/components/css/Hero.css */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background-image: url("../../assets/images/music1.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+  backdrop-filter: blur(3px);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  color: white;
+  text-align: center;
+  max-width: 800px;
+  padding: 1rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #ddd;
+}
+
+.hero-button {
+  padding: 0.8rem 2rem;
+  background-color: #dc6d1d;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #b35414;
+}
+
+/* Dark Mode Support */
+.home-container.dark-mode .hero-content h1,
+.home-container.dark-mode .hero-content p {
+  color: #fff;
+}

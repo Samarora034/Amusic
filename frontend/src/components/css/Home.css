@@ -1,21 +1,84 @@
+/* ---------------------------------------------
+   ✅ Base Layout Container
+---------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* login Container Styles */
 .home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+.home-container {
+  position: relative;
   min-height: 100vh;
   background-color: #f5f5f5;
   color: #333;
+  overflow: hidden;
 }
 
+/* ---------------------------------------------
+   ✅ Flex Layout for Sidebar + Main
+---------------------------------------------- */
 .home-content {
   display: flex;
-  padding-top: 60px; /* Height of navbar */
+  padding-top: 60px; /* Ensures content is below the navbar */
+  margin-left: 0; /* Sidebar is overlayed, so no left shift needed */
 }
 
+/* Avoid shifting main content even when sidebar is open */
+.home-content.shifted .main-content {
+  margin-left: 0;
+}
+
+/* ---------------------------------------------
+   ✅ Main Content Styling
+---------------------------------------------- */
 .main-content {
   flex: 1;
   padding: 2rem;
-  margin-left: 250px; /* Width of sidebar */
+  margin-left: 0;
   transition: margin-left 0.3s ease;
+  z-index: 1;
 }
 
+/* ---------------------------------------------
+   ✅ Blur Overlay when Sidebar is open
+---------------------------------------------- */
+.blur-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 900;
+  transition: all 0.3s ease;
+}
+
+/* ---------------------------------------------
+   ✅ Dark Mode Support
+---------------------------------------------- */
+.home-container.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.home-container.dark-mode h2 {
+  color: #ffffff;
+}
+
+/* ---------------------------------------------
+   ✅ Section Styling
+---------------------------------------------- */
 section {
   margin-bottom: 3rem;
 }
@@ -23,9 +86,10 @@ section {
 h2 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: inherit;
 }
 
+/* Grid for Playlists and Recommendations */
 .playlist-grid,
 .recommendation-grid {
   display: grid;
@@ -33,30 +97,18 @@ h2 {
   gap: 1.5rem;
 }
 
+/* List for Recently Played */
 .track-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-/* Dark Mode Styles */
-.home-container.dark-mode {
-  background-color: #121212;
-  color: #fff;
-}
-
-.home-container.dark-mode h2 {
-  color: #fff;
-}
-
-.home-container.dark-mode .main-content {
-  background-color: #121212;
-}
-
-/* Responsive Styles */
+/* ---------------------------------------------
+   ✅ Responsive Design
+---------------------------------------------- */
 @media (max-width: 768px) {
   .main-content {
-    margin-left: 0;
     padding: 1rem;
   }
 

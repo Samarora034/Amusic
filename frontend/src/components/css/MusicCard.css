@@ -1,0 +1,27 @@
+.music-card {
+  background: #1e1e1e;
+  color: white;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 240px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.music-card:hover {
+  transform: scale(1.03);
+}
+
+.music-cover {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.music-info {
+  margin-top: 10px;
+}
+
+audio {
+  width: 100%;
+  margin-top: 10px;
+}

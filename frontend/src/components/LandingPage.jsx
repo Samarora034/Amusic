@@ -29,7 +29,7 @@ function Home() {
      
       {/* Main section with hero section and CTA section */}
       <main className="landing-main">
-        <section className="hero-section">
+        <section className="hero">
           <h2>Discover, Stream, and Share Your Favorite Music</h2>
           <p>Join millions of music lovers on Amusic and enjoy:</p>
 
