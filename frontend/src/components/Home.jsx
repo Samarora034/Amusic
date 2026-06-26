@@ -42,9 +42,9 @@ function Home() {
       <header className="fixed top-0 right-0 w-full md:w-[calc(100%-16rem)] z-40 bg-surface/80 backdrop-blur-xl flex justify-between items-center px-6 md:px-margin-desktop h-20">
         <div className="flex items-center gap-8 flex-1">
           <div className="relative w-full max-w-md">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant material-symbols-outlined">search</span>
+            <span className="font-bold absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[10px]">[ SEARCH ]</span>
             <input
-              className="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-full py-2.5 pl-12 pr-4 focus:ring-2 focus:ring-primary-container focus:outline-none transition-all placeholder:text-on-surface-variant/50"
+              className="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-full py-2.5 pl-20 pr-4 focus:ring-2 focus:ring-primary-container focus:outline-none transition-all placeholder:text-on-surface-variant/50"
               placeholder="what do you wanna hear?"
               type="text"
               value={searchQuery}
@@ -54,7 +54,7 @@ function Home() {
         </div>
         <button className="flex items-center gap-3" onClick={() => { localStorage.removeItem("token"); localStorage.removeItem("user"); window.location.href = "/login"; }}>
           <div className="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center">
-            <span className="material-symbols-outlined text-on-surface">logout</span>
+            <span className="font-bold text-on-surface text-[12px]">[ OUT ]</span>
           </div>
         </button>
       </header>
@@ -80,7 +80,7 @@ function Home() {
 
             <section className="mb-12">
               <div className="px-6 md:px-margin-desktop flex justify-between items-end mb-6">
-                <h3 className="font-headline-lg text-[24px] md:text-headline-lg">Trending Now 🔥</h3>
+                <h3 className="font-headline-lg text-[24px] md:text-headline-lg">Trending Now</h3>
               </div>
               <div className="px-6 md:px-margin-desktop grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
                 {displaySongs.slice(0, 12).map((song) => (

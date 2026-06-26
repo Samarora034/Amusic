@@ -52,8 +52,8 @@ function LandingPage() {
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <Link to="/register" className="btn-primary font-label-md text-label-md px-8 py-4 rounded-full flex items-center gap-2 w-full sm:w-auto justify-center">
                 Let me in
-                <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  play_arrow
+                <span className="font-bold text-[14px]">
+                  [ PLAY ]
                 </span>
               </Link>
               <button className="glass-panel font-label-md text-label-md text-on-surface px-8 py-4 rounded-full flex items-center gap-2 hover:bg-surface-variant/30 transition-all w-full sm:w-auto justify-center">
@@ -86,9 +86,7 @@ function LandingPage() {
                 
                 <div className="relative z-10">
                   <div className="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mb-6">
-                    <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>
-                      graphic_eq
-                    </span>
+                    <span className="font-bold text-[12px]">[ EQ ]</span>
                   </div>
                   <h3 className="font-headline-lg-mobile text-[24px] text-on-surface mb-3">
                     Hi-Fi Audio Quality
@@ -117,9 +115,7 @@ function LandingPage() {
                 <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-secondary via-transparent to-transparent"></div>
                 <div className="relative z-10">
                   <div className="w-12 h-12 rounded-full bg-surface-variant text-on-surface flex items-center justify-center mb-6">
-                    <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>
-                      offline_bolt
-                    </span>
+                    <span className="font-bold text-[12px]">[ OFF ]</span>
                   </div>
                   <h3 className="font-headline-lg-mobile text-[24px] text-on-surface mb-3">
                     Offline Mode
@@ -145,9 +141,7 @@ function LandingPage() {
                 ></div>
                 
                 <div className="relative z-10 max-w-2xl py-12 flex flex-col items-center">
-                  <span className="material-symbols-outlined text-[48px] text-primary mb-4" style={{ fontVariationSettings: "'FILL' 1" }}>
-                    auto_awesome
-                  </span>
+                  <span className="font-bold text-[24px] text-primary mb-4">[ AI ]</span>
                   <h3 className="font-headline-lg text-[32px] md:text-[40px] text-on-surface mb-4">
                     Curated for You
                   </h3>
@@ -156,8 +150,8 @@ function LandingPage() {
                   </p>
                   <Link to="/explore" className="glass-panel font-label-md text-label-md text-primary px-6 py-3 rounded-full hover:bg-primary/10 transition-colors inline-flex items-center gap-2 border-primary/30 border w-max">
                     Discover Your Mix
-                    <span className="material-symbols-outlined text-[16px]">
-                      arrow_forward
+                    <span className="font-bold text-[12px]">
+                      [ -&gt; ]
                     </span>
                   </Link>
                 </div>

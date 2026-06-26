@@ -46,9 +46,9 @@ function Explore() {
 
       <header className="fixed top-0 right-0 w-full md:w-[calc(100%-16rem)] z-40 bg-surface/80 backdrop-blur-xl flex justify-between items-center px-6 md:px-margin-desktop h-20">
         <div className="relative w-full max-w-md">
-          <span className="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant material-symbols-outlined">search</span>
+          <span className="font-bold absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[10px]">[ SEARCH ]</span>
           <input
-            className="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-full py-2.5 pl-12 pr-4 focus:ring-2 focus:ring-primary-container focus:outline-none transition-all placeholder:text-on-surface-variant/50"
+            className="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-full py-2.5 pl-20 pr-4 focus:ring-2 focus:ring-primary-container focus:outline-none transition-all placeholder:text-on-surface-variant/50"
             placeholder="find something new..."
             type="text"
             value={searchQuery}

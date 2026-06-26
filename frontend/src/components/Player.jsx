@@ -88,23 +88,23 @@ function Player() {
           {/* Controls */}
           <div className="flex items-center gap-4 md:gap-5">
             <button onClick={playPrev} className="text-on-surface-variant hover:text-on-surface transition-colors hidden sm:block">
-              <span className="material-symbols-outlined">skip_previous</span>
+              <span className="font-bold text-[14px]">[ &lt;&lt; ]</span>
             </button>
 
             {audioLoading ? (
               <div className="w-11 h-11 rounded-full bg-primary-container/20 flex items-center justify-center">
-                <span className="material-symbols-outlined animate-spin text-primary-container text-xl">progress_activity</span>
+                <span className="font-bold text-primary-container text-[12px] animate-pulse">[ LOAD ]</span>
               </div>
             ) : (
               <button onClick={togglePlay} className="w-11 h-11 rounded-full bg-primary-container text-on-primary flex items-center justify-center hover:scale-105 active:scale-95 transition-transform">
-                <span className="material-symbols-outlined text-xl" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  {isPlaying ? "pause" : "play_arrow"}
+                <span className="font-bold text-[12px]">
+                  {isPlaying ? "[ || ]" : "[ > ]"}
                 </span>
               </button>
             )}
 
             <button onClick={playNext} className="text-on-surface-variant hover:text-on-surface transition-colors hidden sm:block">
-              <span className="material-symbols-outlined">skip_next</span>
+              <span className="font-bold text-[14px]">[ &gt;&gt; ]</span>
             </button>
 
             {/* Time */}
@@ -120,22 +120,22 @@ function Player() {
               className={`transition-colors ${liked ? "text-primary-container" : "text-on-surface-variant hover:text-primary-container"}`}
               title={liked ? "Liked!" : "Like"}
             >
-              <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: liked ? "'FILL' 1" : "'FILL' 0" }}>favorite</span>
+              <span className="font-bold text-[12px]">[ FAV ]</span>
             </button>
 
             <button
               onClick={() => {
                 if (!isFavorite(currentTrack.id)) toggleFavorite(currentTrack);
-                alert("Added to Library ❤️");
+                alert("Added to Library");
               }}
               className="text-on-surface-variant hover:text-on-surface transition-colors hidden md:block"
               title="Add to Library"
             >
-              <span className="material-symbols-outlined text-[20px]">playlist_add</span>
+              <span className="font-bold text-[12px]">[ + ]</span>
             </button>
 
             <button onClick={closePlayer} className="text-on-surface-variant hover:text-on-surface transition-colors">
-              <span className="material-symbols-outlined text-[18px]">close</span>
+              <span className="font-bold text-[12px]">[ X ]</span>
             </button>
           </div>
         </div>
