@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - Amusic</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#351000",
+                      "primary": "#ffb693",
+                      "on-secondary-fixed-variant": "#5516be",
+                      "on-secondary": "#3c0091",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "inverse-on-surface": "#313031",
+                      "secondary-fixed": "#e9ddff",
+                      "surface-variant": "#353436",
+                      "on-surface-variant": "#e2bfb0",
+                      "secondary": "#d0bcff",
+                      "on-secondary-fixed": "#23005c",
+                      "on-primary": "#561f00",
+                      "on-primary-container": "#572000",
+                      "surface-dim": "#131314",
+                      "on-error-container": "#ffdad6",
+                      "inverse-primary": "#a04100",
+                      "background": "#131314",
+                      "surface-container-lowest": "#0e0e0f",
+                      "tertiary": "#c8c6c5",
+                      "surface-tint": "#ffb693",
+                      "error-container": "#93000a",
+                      "error": "#ffb4ab",
+                      "tertiary-container": "#9a9898",
+                      "surface-container-low": "#1c1b1c",
+                      "outline": "#a98a7d",
+                      "on-tertiary-container": "#313130",
+                      "on-surface": "#e5e2e3",
+                      "surface-container-highest": "#353436",
+                      "primary-fixed": "#ffdbcc",
+                      "surface-container-high": "#2a2a2b",
+                      "on-error": "#690005",
+                      "surface": "#131314",
+                      "secondary-container": "#571bc1",
+                      "inverse-surface": "#e5e2e3",
+                      "secondary-fixed-dim": "#d0bcff",
+                      "tertiary-fixed": "#e5e2e1",
+                      "on-tertiary-fixed-variant": "#474646",
+                      "outline-variant": "#5a4136",
+                      "on-secondary-container": "#c4abff",
+                      "on-primary-fixed-variant": "#7a3000",
+                      "surface-bright": "#3a393a",
+                      "on-tertiary": "#313030",
+                      "primary-fixed-dim": "#ffb693",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "surface-container": "#201f20",
+                      "primary-container": "#ff6b00",
+                      "on-background": "#e5e2e3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "container-max": "1440px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "display-sm": [
+                              "Montserrat"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Montserrat"
+                      ],
+                      "headline-lg-mobile": [
+                              "Montserrat"
+                      ],
+                      "display-lg": [
+                              "Montserrat"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-sm": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "56px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-panel {
+            background: rgba(32, 31, 32, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(169, 138, 125, 0.1);
+        }
+        .input-glass {
+            background: rgba(14, 14, 15, 0.6);
+            border: 1px solid rgba(169, 138, 125, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        .input-glass:focus {
+            border-color: #ffb693;
+            outline: none;
+            box-shadow: 0 0 0 1px #ffb693;
+        }
+        .btn-primary-glow {
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+        .btn-primary-glow:hover {
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 182, 147, 0.3);
+        }
+        .bg-gradient-radial {
+            background: radial-gradient(circle at top right, rgba(255, 107, 0, 0.15), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(87, 27, 193, 0.1), transparent 40%);
+        }
+      </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col bg-gradient-radial">
+<!-- TopNavBar (Simplified for Transactional) -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 dark:bg-background/80 backdrop-blur-xl border-b border-outline-variant/10 shadow-none transition-all">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full h-[72px]">
+<a class="font-display-sm text-display-sm font-extrabold text-primary flex items-center gap-2" href="/">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">headphones</span>
+                Amusic
+            </a>
+<div class="hidden md:flex gap-8">
+<!-- Navigation suppressed for transactional page intent -->
+</div>
+<a class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors duration-300" href="#">
+                Help
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center px-margin-mobile pt-24 pb-12 relative overflow-hidden">
+<!-- Decorative Ambient Element -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+<!-- Login Card -->
+<div class="glass-panel rounded-2xl shadow-2xl w-full max-w-[480px] p-8 md:p-10 relative z-10">
+<div class="text-center mb-8">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Welcome Back</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Sign in to continue to Amusic.</p>
+</div>
+<form class="space-y-6">
+<!-- Email Input -->
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant block" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">mail</span>
+<input class="input-glass w-full rounded-lg py-3 pl-10 pr-4 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 transition-colors" id="email" placeholder="name@example.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="font-label-sm text-label-sm text-on-surface-variant block" for="password">Password</label>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#">Forgot password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">lock</span>
+<input class="input-glass w-full rounded-lg py-3 pl-10 pr-10 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 transition-colors" id="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember Me -->
+<div class="flex items-center">
+<input class="w-4 h-4 rounded border-outline-variant/30 bg-surface-container-lowest text-primary focus:ring-primary focus:ring-offset-background" id="remember" type="checkbox"/>
+<label class="ml-2 font-label-md text-label-md text-on-surface-variant cursor-pointer" for="remember">Keep me logged in</label>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary text-on-primary-fixed font-label-md text-label-md py-3 rounded-lg btn-primary-glow flex justify-center items-center gap-2 active:scale-[0.98] transition-transform" type="submit">
+                    Sign In
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<div class="mt-8">
+<div class="relative">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant/20"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-2 bg-surface-container text-on-surface-variant font-label-sm text-label-sm rounded-full glass-panel">Or continue with</span>
+</div>
+</div>
+<div class="mt-6 grid grid-cols-2 gap-4">
+<button class="flex justify-center items-center gap-2 py-2.5 px-4 rounded-lg input-glass font-label-md text-label-md text-on-surface hover:bg-surface-variant/30 transition-colors">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+                        Google
+                    </button>
+<button class="flex justify-center items-center gap-2 py-2.5 px-4 rounded-lg input-glass font-label-md text-label-md text-on-surface hover:bg-surface-variant/30 transition-colors">
+<svg class="w-5 h-5 text-on-surface" fill="currentColor" viewbox="0 0 24 24">
+<path d="M16.365 14.384c-.021 3.084 2.68 4.113 2.704 4.124-.022.068-.426 1.455-1.42 2.905-.861 1.258-1.758 2.505-3.172 2.531-1.385.025-1.84-.817-3.411-.817-1.571 0-2.073.791-3.411.843-1.385.05-2.428-1.346-3.295-2.583-1.768-2.56-3.116-7.234-1.309-10.366.904-1.56 2.502-2.553 4.25-2.58 1.347-.024 2.624.904 3.435.904.81 0 2.378-1.127 4.02-1.026 1.706.05 3.25.688 4.204 2.093-3.342 1.95-2.825 6.784.405 7.972zm-2.588-9.083c.731-.885 1.226-2.115 1.092-3.346-1.055.042-2.332.702-3.088 1.584-.67.777-1.266 2.036-1.109 3.24 1.183.092 2.372-.594 3.105-1.478z"></path>
+</svg>
+                        Apple
+                    </button>
+</div>
+</div>
+<div class="mt-8 text-center font-body-md text-body-md text-on-surface-variant">
+                Don't have an account? <a class="text-primary hover:underline font-label-md text-label-md" href="#">Sign Up</a>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-dim dark:bg-surface-dim border-t border-outline-variant/20 none">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-8 gap-4 w-full">
+<div class="font-display-sm text-display-sm text-primary">
+                Amusic
+            </div>
+<div class="flex gap-6 flex-wrap justify-center">
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-on-surface transition-colors" href="#">Cookies</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-on-surface transition-colors" href="#">Support</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-tertiary-fixed-variant text-center">
+                © 2024 Amusic Hi-Fi Streaming. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

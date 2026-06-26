@@ -1,75 +1,110 @@
-# Amusic
-## Music you found amusing :)
+# Amusic 🎵
 
-## live link: [Click Here!](https://amusic-omega.vercel.app/)
+A full-stack music streaming web app where users can discover, stream, and share music.
 
-![image](https://github.com/user-attachments/assets/fbcb750e-5f09-4bf1-b8c9-3f3a2bfecd67)
+**Live:** [https://amusic-omega.vercel.app](https://amusic-omega.vercel.app)
 
+![Amusic Screenshot](https://github.com/user-attachments/assets/fbcb750e-5f09-4bf1-b8c9-3f3a2bfecd67)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+| Layer    | Technology                          |
+|----------|-------------------------------------|
+| Frontend | React 19, React Router, MUI, Axios  |
+| Backend  | Node.js, Express 5, Mongoose        |
+| Database | MongoDB Atlas                       |
+| Auth     | JWT (jsonwebtoken + bcryptjs)        |
+| Deploy   | Vercel (frontend), Render (backend) |
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+Amusic/
+├── backend/
+│   ├── index.js          # Express server, routes, JWT auth
+│   ├── models/user.js    # Mongoose user schema with password hashing
+│   ├── .env.example      # Environment variables template
+│   └── package.json
+├── frontend/
+│   ├── src/
+│   │   ├── App.js              # Router (/, /login, /register, /home)
+│   │   ├── index.js            # React entry point
+│   │   ├── context/ThemeContext.jsx  # Dark mode context
+│   │   ├── components/
+│   │   │   ├── LandingPage.jsx # Marketing page
+│   │   │   ├── Login.jsx       # Login form
+│   │   │   ├── Register.jsx    # Registration form
+│   │   │   ├── Home.jsx        # Music dashboard
+│   │   │   ├── Navbar.jsx      # Navigation bar
+│   │   │   ├── Sidebar.jsx     # Library sidebar
+│   │   │   ├── Hero.jsx        # Hero banner
+│   │   │   ├── MusicCard.jsx   # Song card with audio player
+│   │   │   ├── Footer.jsx      # Footer
+│   │   │   └── Darkmode.jsx    # Theme toggle button
+│   │   └── assets/Data/musicData.js  # Song data
+│   ├── .env.example
+│   └── package.json
+└── README.md
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v18+)
+- A MongoDB Atlas account (free tier works)
 
-### `npm run build`
+### Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/your-username/Amusic.git
+   cd Amusic
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Backend**
+   ```bash
+   cd backend
+   cp .env.example .env
+   # Fill in MONGODB_URI and JWT_SECRET in .env
+   npm install
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Frontend**
+   ```bash
+   cd frontend
+   cp .env.example .env
+   # Set REACT_APP_API_URL=http://localhost:3001
+   npm install
+   npm start
+   ```
 
-### `npm run eject`
+The app runs at `http://localhost:3000` with the API at `http://localhost:3001`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Environment Variables
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Backend (`.env`)**
+| Variable     | Description                    |
+|--------------|--------------------------------|
+| MONGODB_URI  | MongoDB Atlas connection string|
+| JWT_SECRET   | Secret key for signing JWTs    |
+| PORT         | Server port (default: 3001)    |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Frontend (`.env`)**
+| Variable           | Description                         |
+|--------------------|-------------------------------------|
+| REACT_APP_API_URL  | Backend URL (default: Render URL)   |
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## API Endpoints
 
-## Learn More
+| Method | Route      | Auth     | Description              |
+|--------|------------|----------|--------------------------|
+| POST   | /register  | Public   | Create account, get token |
+| POST   | /login     | Public   | Login, get token          |
+| GET    | /me        | Required | Get current user profile  |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Frontend:** Push to GitHub → connect to Vercel → set `REACT_APP_API_URL` env var
+- **Backend:** Push to GitHub → connect to Render → set `MONGODB_URI`, `JWT_SECRET`, `PORT` env vars

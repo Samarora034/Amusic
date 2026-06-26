@@ -1,18 +1,64 @@
-// src/data/musicData.js
+// src/assets/Data/musicData.js
 const musicData = [
   {
-    title: "Never Gonna Give You Up",
-    artist: "Rick Astley",
-    coverUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FdQw4w9WgXcQ%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=b5c15dcaa9923db64a201813fb3ac921d1eec66bde1b89ed6ee7480c777f23f2",
-    audioUrl:
-      "./songs/Afreen Afreen Rahat Fateh Ali Khan & Momina Mustehsan.mp3",
+    title: "Afreen Afreen",
+    artist: "Rahat Fateh Ali Khan & Momina Mustehsan",
+    coverUrl: "/assets/images/afreen afreen.jpg",
+    audioUrl: "/assets/songs/Afreen Afreen Rahat Fateh Ali Khan & Momina Mustehsan.mp3",
   },
   {
     title: "Blinding Lights",
     artist: "The Weeknd",
-    coverUrl: "../images/music1.png",
-    audioUrl:
-      "./songs/Afreen Afreen Rahat Fateh Ali Khan & Momina Mustehsan.mp3",
+    coverUrl: "/assets/images/music1.png",
+    audioUrl: "/assets/songs/Afreen Afreen Rahat Fateh Ali Khan & Momina Mustehsan.mp3",
+  },
+  {
+    title: "Shape of You",
+    artist: "Ed Sheeran",
+    coverUrl: "/assets/images/music1.png",
+    audioUrl: "/assets/songs/Afreen Afreen Rahat Fateh Ali Khan & Momina Mustehsan.mp3",
+  },
+  {
+    title: "Starboy",
+    artist: "The Weeknd ft. Daft Punk",
+    coverUrl: "/assets/images/music1.png",
+    audioUrl: "/assets/songs/Afreen Afreen Rahat Fateh Ali Khan & Momina Mustehsan.mp3",
+  },
+  {
+    title: "Tum Hi Ho",
+    artist: "Arijit Singh",
+    coverUrl: "/assets/images/afreen afreen.jpg",
+    audioUrl: "/assets/songs/Afreen Afreen Rahat Fateh Ali Khan & Momina Mustehsan.mp3",
+  },
+  {
+    title: "Levitating",
+    artist: "Dua Lipa",
+    coverUrl: "/assets/images/music1.png",
+    audioUrl: "/assets/songs/Afreen Afreen Rahat Fateh Ali Khan & Momina Mustehsan.mp3",
+  },
+  {
+    title: "Kesariya",
+    artist: "Arijit Singh",
+    coverUrl: "/assets/images/afreen afreen.jpg",
+    audioUrl: "/assets/songs/Afreen Afreen Rahat Fateh Ali Khan & Momina Mustehsan.mp3",
+  },
+  {
+    title: "Dil Diyan Gallan",
+    artist: "Atif Aslam",
+    coverUrl: "/assets/images/afreen afreen.jpg",
+    audioUrl: "/assets/songs/Afreen Afreen Rahat Fateh Ali Khan & Momina Mustehsan.mp3",
+  },
+  {
+    title: "Peaches",
+    artist: "Justin Bieber",
+    coverUrl: "/assets/images/music1.png",
+    audioUrl: "/assets/songs/Afreen Afreen Rahat Fateh Ali Khan & Momina Mustehsan.mp3",
+  },
+  {
+    title: "Raataan Lambiyan",
+    artist: "Jubin Nautiyal & Asees Kaur",
+    coverUrl: "/assets/images/afreen afreen.jpg",
+    audioUrl: "/assets/songs/Afreen Afreen Rahat Fateh Ali Khan & Momina Mustehsan.mp3",
   },
 ];
 

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amusic - Hi-Fi Streaming</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#351000",
+                      "primary": "#ffb693",
+                      "on-secondary-fixed-variant": "#5516be",
+                      "on-secondary": "#3c0091",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "inverse-on-surface": "#313031",
+                      "secondary-fixed": "#e9ddff",
+                      "surface-variant": "#353436",
+                      "on-surface-variant": "#e2bfb0",
+                      "secondary": "#d0bcff",
+                      "on-secondary-fixed": "#23005c",
+                      "on-primary": "#561f00",
+                      "on-primary-container": "#572000",
+                      "surface-dim": "#131314",
+                      "on-error-container": "#ffdad6",
+                      "inverse-primary": "#a04100",
+                      "background": "#131314",
+                      "surface-container-lowest": "#0e0e0f",
+                      "tertiary": "#c8c6c5",
+                      "surface-tint": "#ffb693",
+                      "error-container": "#93000a",
+                      "error": "#ffb4ab",
+                      "tertiary-container": "#9a9898",
+                      "surface-container-low": "#1c1b1c",
+                      "outline": "#a98a7d",
+                      "on-tertiary-container": "#313130",
+                      "on-surface": "#e5e2e3",
+                      "surface-container-highest": "#353436",
+                      "primary-fixed": "#ffdbcc",
+                      "surface-container-high": "#2a2a2b",
+                      "on-error": "#690005",
+                      "surface": "#131314",
+                      "secondary-container": "#571bc1",
+                      "inverse-surface": "#e5e2e3",
+                      "secondary-fixed-dim": "#d0bcff",
+                      "tertiary-fixed": "#e5e2e1",
+                      "on-tertiary-fixed-variant": "#474646",
+                      "outline-variant": "#5a4136",
+                      "on-secondary-container": "#c4abff",
+                      "on-primary-fixed-variant": "#7a3000",
+                      "surface-bright": "#3a393a",
+                      "on-tertiary": "#313030",
+                      "primary-fixed-dim": "#ffb693",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "surface-container": "#201f20",
+                      "primary-container": "#ff6b00",
+                      "on-background": "#e5e2e3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px",
+                      "container-max": "1440px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "display-sm": [
+                              "Montserrat"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Montserrat"
+                      ],
+                      "headline-lg-mobile": [
+                              "Montserrat"
+                      ],
+                      "display-lg": [
+                              "Montserrat"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-sm": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "56px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-panel {
+            background: rgba(32, 31, 32, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(169, 138, 125, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 182, 147, 0.3);
+        }
+        .btn-primary {
+            background-color: #ff6b00; /* primary-container */
+            color: #000000;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
+            transform: translateY(-2px);
+        }
+        .vignette-overlay {
+            background: radial-gradient(circle, transparent 40%, #131314 100%);
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md selection:bg-primary-container selection:text-black antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full bg-background/80 dark:bg-background/80 backdrop-blur-xl bg-background/80 backdrop-blur-md border-b border-outline-variant/10 shadow-none z-50 transition-all active:scale-95">
+<div class="flex justify-between items-center px-margin-desktop py-4 w-full z-50 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-display-sm text-display-sm font-extrabold text-primary" href="#">Amusic</a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors duration-300" href="#">Discover</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Premium</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-300" href="#">Radio</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex text-on-surface-variant hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+<button class="font-label-md text-label-md bg-primary-container text-black px-6 py-2 rounded-full hover:shadow-[0_0_15px_rgba(255,107,0,0.4)] transition-all duration-300">Sign In</button>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center justify-center pt-24 overflow-hidden">
+<!-- Background Image with Vignette -->
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full object-cover" data-alt="A cinematic, wide-angle shot of an audiophile wearing high-end studio headphones, eyes closed, completely immersed in music. The lighting is dark and moody with vibrant neon orange and deep purple rim lights highlighting the contours of their face and headphones. The background is a deeply blurred, modern urban nightscape, creating a sense of isolation and focus. High fidelity, premium aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBftdWtsUML-bBoo4lUNTLYN9d_biDVHC0PYQfnvy82RwW6zdLKfsfrzn0zCYCKKGNAMil9Z4aTOrQ7hfmnpmQJumajus5mFVeM2NIFooLQgTOivSGUKWdJ_3SsCy6VasaGYu_tEr_P-UjDeN8EhBNrSQ7FGhdmudqM9E7z3VrDI5Do7AXTVdY92-LGA69UAKL5jd0VJHVEHGADosAuGTuiIsqpzvuBy_f-F5ZCq5x_MbAqAr4fvn6rTEfVyT1YWuoGcb290YBUZQ')"></div>
+<div class="absolute inset-0 vignette-overlay z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-20"></div>
+</div>
+<div class="relative z-30 container mx-auto px-margin-mobile md:px-margin-desktop text-center max-w-container-max flex flex-col items-center">
+<span class="font-label-md text-label-md text-primary mb-6 tracking-[0.2em] uppercase bg-surface-variant/50 px-4 py-2 rounded-full border border-outline-variant/30 backdrop-blur-md">The Standard of Sound</span>
+<h1 class="font-display-lg text-display-lg md:text-[80px] md:leading-[1.1] text-on-surface mb-8 max-w-4xl text-glow drop-shadow-2xl">
+                    Experience Sound <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Like Never Before</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-10">
+                    Immerse yourself in lossless audio and master-quality soundscapes. Designed for those who feel every beat, hear every breath, and live in the music.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 items-center">
+<button class="btn-primary font-label-md text-label-md px-8 py-4 rounded-full flex items-center gap-2 w-full sm:w-auto justify-center">
+                        Start Free Trial
+                        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button class="glass-panel font-label-md text-label-md text-on-surface px-8 py-4 rounded-full flex items-center gap-2 hover:bg-surface-variant/30 transition-all w-full sm:w-auto justify-center">
+                        Explore Features
+                    </button>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-background">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-4">Engineered for Audiophiles</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">We don't compromise on quality, and neither should you. Discover the features that make Amusic the definitive listening experience.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Feature 1: Hi-Fi Audio -->
+<div class="glass-panel p-8 rounded-xl flex flex-col justify-between md:col-span-2 group overflow-hidden relative">
+<!-- Abstract Waveform Background -->
+<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
+<div class="relative z-10">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-3">Hi-Fi Audio Quality</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Stream in stunning 24-bit/192kHz resolution. Hear the studio masters exactly as the artists intended, with zero compression artifacts.</p>
+</div>
+<div class="mt-8 relative h-32 rounded-lg overflow-hidden border border-outline-variant/20 bg-surface-container-lowest">
+<div class="w-full h-full bg-cover bg-center opacity-80 mix-blend-screen" data-alt="A close-up, highly detailed abstract visualization of high-frequency audio waves. Glowing neon orange and bright white spectral lines undulating across a deep, pitch-black background, representing pristine, uncompressed sound quality. Technical, modern, and visually striking." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFoPZTnVBaRvmDS7rNO-FEDqGobUekLuXoZkvhBuSdNf1wcj0xXDUHcthSVfjDBYyaZLqAA0AixyWG375hUIC99-2HcUx5Fcp4oYF3iFEViQup-nHb0JwLyVw7g1TDbHKH60idmNF5gQt8Bh15lPRDThOG_l05gBiw4P4PkSA1olxgh_popswuHzN51P9DrrOlZZyMtoIvSEEzJyCeQCof1Vk7OpwThfjlxehlzkEIBOoO8Ix8JliRDJ3HwAc5BxZKezJXTfnL0g')"></div>
+</div>
+</div>
+<!-- Feature 2: Offline Mode -->
+<div class="glass-panel p-8 rounded-xl flex flex-col justify-between group relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-secondary via-transparent to-transparent"></div>
+<div class="relative z-10">
+<div class="w-12 h-12 rounded-full bg-surface-variant text-on-surface flex items-center justify-center mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">offline_bolt</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-3">Offline Mode</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Take your uncompressed library anywhere. Download your favorite albums in FLAC format and listen without a connection.</p>
+</div>
+</div>
+<!-- Feature 3: Curated -->
+<div class="glass-panel p-8 rounded-xl flex flex-col md:col-span-3 items-center text-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-surface-container-lowest/80 z-0"></div>
+<div class="absolute inset-0 w-full h-full bg-cover bg-center z-[-1] opacity-30 group-hover:opacity-40 transition-opacity duration-700" data-alt="A stylish, dark-themed collage of various abstract album covers featuring moody ambient textures, vibrant electronic geometrics, and classic jazz imagery. The layout is asymmetrical and modern, partially obscured by a deep blur and a dark overlay, emphasizing the idea of discovery and diverse musical curation." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDYBaRF_6yAHHdQ-HaWMKHdz6eMuGavGdte4D52SkUf-35tqLWKd6lsS9mEgiDWJKvCiV4VrZIIICQXvaRBoonY7ISuihN28y3JOg4u7vgdfqWv-aIvwlkAWMcQHpVxiW96JxnNRxrWAQJl3ITl1NMYJCIvs5waQeavUyoo1L7BcI0onnIQy5Dg0LM68_FCcZFOq-i06Q91JoD5IUFTiT-CxxqOWsG7SdJ8bjgR0JFE5TB_LpGDfmjsmR5-rTtOzjBIqAR6xvnrjg')"></div>
+<div class="relative z-10 max-w-2xl py-12">
+<span class="material-symbols-outlined text-[48px] text-primary mb-4" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h3 class="font-headline-lg md:text-[40px] text-on-surface mb-4">Curated for You</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Our AI-driven engine combined with expert human tastemakers delivers playlists that adapt to your exact sonic profile.</p>
+<button class="glass-panel font-label-md text-label-md text-primary px-6 py-3 rounded-full hover:bg-primary/10 transition-colors inline-flex items-center gap-2 border-primary/30 border">
+                                Discover Your Mix
+                                <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-dim dark:bg-surface-dim bg-surface-dim border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4 shadow-none">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-display-sm text-display-sm text-primary">Amusic</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Amusic Hi-Fi Streaming. All rights reserved.</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-on-surface transition-colors" href="#">Cookies</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-fixed-variant hover:text-on-surface transition-colors" href="#">Support</a>
+</nav>
+</footer>
+</body></html>
