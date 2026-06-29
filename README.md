@@ -4,7 +4,8 @@ A full-stack music streaming web app where users can discover, stream, and share
 
 **Live:** [Live Link](https://amusic-ptnm.vercel.app/)
 
-![Amusic Screenshot](https://github.com/user-attachments/assets/fbcb750e-5f09-4bf1-b8c9-3f3a2bfecd67)
+<img width="948" height="444" alt="image" src="https://github.com/user-attachments/assets/2b8670c8-0fab-4032-9df2-68a28fa573df" />
+
 
 ## Tech Stack
 
