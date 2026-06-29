@@ -29,7 +29,7 @@ function Player() {
       audio.removeEventListener("pause", onPause);
       audio.removeEventListener("ended", playNext);
     };
-  }, [currentTrack?.audioUrl]);
+  }, [currentTrack?.audioUrl, audioRef, playNext]);
 
   if (!currentTrack) return null;
 

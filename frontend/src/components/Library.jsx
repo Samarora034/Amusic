@@ -4,7 +4,7 @@ import MusicCard from "./MusicCard";
 import { usePlayer } from "../context/PlayerContext";
 
 function Library() {
-  const { playSong, currentTrack, favorites, toggleFavorite, isFavorite } = usePlayer();
+  const { playSong, currentTrack, favorites, toggleFavorite } = usePlayer();
   const user = JSON.parse(localStorage.getItem("user") || "{}");
 
   const handlePlay = (song) => playSong(song, favorites);
