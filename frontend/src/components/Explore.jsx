@@ -4,7 +4,7 @@ import MusicCard from "./MusicCard";
 import axios from "axios";
 
 
-const API_URL = process.env.REACT_APP_API_URL || "https://amusic-hm8o.onrender.com";
+const API_URL = process.env.REACT_APP_API_URL || "https://amusic-yie7.onrender.com";
 const GENRES = ["Pop", "Rock", "Hip Hop", "Electronic", "Jazz", "R&B", "Classical", "Indie"];
 
 function Explore() {

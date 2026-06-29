@@ -5,7 +5,7 @@ import MusicCard from "./MusicCard";
 import axios from "axios";
 import { usePlayer } from "../context/PlayerContext";
 
-const API_URL = process.env.REACT_APP_API_URL || "https://amusic-hm8o.onrender.com";
+const API_URL = process.env.REACT_APP_API_URL || "https://amusic-yie7.onrender.com";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");

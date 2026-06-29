@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL || "https://amusic-hm8o.onrender.com";
+const API_URL = process.env.REACT_APP_API_URL || "https://amusic-yie7.onrender.com";
 
 function Register() {
   const [name, setName] = useState("");

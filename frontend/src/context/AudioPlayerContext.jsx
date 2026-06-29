@@ -3,7 +3,7 @@ import axios from "axios";
 
 const AudioPlayerContext = createContext();
 
-const API_URL = process.env.REACT_APP_API_URL || "https://amusic-hm8o.onrender.com";
+const API_URL = process.env.REACT_APP_API_URL || "https://amusic-yie7.onrender.com";
 
 export function AudioPlayerProvider({ children }) {
   const [currentTrack, setCurrentTrack] = useState(null);

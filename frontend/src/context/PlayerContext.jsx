@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useRef } from "react";
 import axios from "axios";
 
-const API_URL = process.env.REACT_APP_API_URL || "https://amusic-hm8o.onrender.com";
+const API_URL = process.env.REACT_APP_API_URL || "https://amusic-yie7.onrender.com";
 
 const PlayerContext = createContext();
 
