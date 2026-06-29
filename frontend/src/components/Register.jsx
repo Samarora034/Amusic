@@ -60,9 +60,9 @@ function Register() {
             <div className="space-y-2">
               <label className="font-label-sm text-label-sm text-on-surface-variant block" htmlFor="name">Full Name</label>
               <div className="relative">
-                <span className="font-bold absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[10px]">[ USER ]</span>
+                <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">person</span>
                 <input 
-                  className="input-glass w-full rounded-lg py-3 pl-14 pr-4 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 transition-colors" 
+                  className="input-glass w-full rounded-lg py-3 pl-10 pr-4 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 transition-colors" 
                   id="name" placeholder="John Doe" required type="text"
                   value={name} onChange={(e) => setName(e.target.value)}
                 />
@@ -72,9 +72,9 @@ function Register() {
             <div className="space-y-2">
               <label className="font-label-sm text-label-sm text-on-surface-variant block" htmlFor="email">Email Address</label>
               <div className="relative">
-                <span className="font-bold absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[10px]">[ MAIL ]</span>
+                <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">mail</span>
                 <input 
-                  className="input-glass w-full rounded-lg py-3 pl-14 pr-4 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 transition-colors" 
+                  className="input-glass w-full rounded-lg py-3 pl-10 pr-4 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 transition-colors" 
                   id="email" placeholder="name@example.com" required type="email"
                   value={email} onChange={(e) => setEmail(e.target.value)}
                 />
@@ -84,9 +84,9 @@ function Register() {
             <div className="space-y-2">
               <label className="font-label-sm text-label-sm text-on-surface-variant block" htmlFor="password">Password</label>
               <div className="relative">
-                <span className="font-bold absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[10px]">[ LOCK ]</span>
+                <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">lock</span>
                 <input 
-                  className="input-glass w-full rounded-lg py-3 pl-14 pr-10 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 transition-colors" 
+                  className="input-glass w-full rounded-lg py-3 pl-10 pr-10 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/50 transition-colors" 
                   id="password" placeholder="Min 6 characters" required type="password" minLength={6}
                   value={password} onChange={(e) => setPassword(e.target.value)}
                 />
@@ -95,7 +95,7 @@ function Register() {
             
             <button className="w-full bg-primary text-on-primary-fixed font-label-md text-label-md py-3 rounded-lg btn-primary-glow flex justify-center items-center gap-2 active:scale-[0.98] transition-transform" type="submit" disabled={loading}>
               {loading ? "Creating account..." : "Sign Up"}
-              <span className="font-bold text-[14px]">[ -&gt; ]</span>
+              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
             </button>
           </form>
           

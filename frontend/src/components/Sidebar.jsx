@@ -23,7 +23,7 @@ function Sidebar() {
                 : "text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest/50"
             }`}
           >
-
+            <span className="material-symbols-outlined" style={{ fontVariationSettings: currentPath === "/home" ? "'FILL' 1" : "'FILL' 0" }}>home</span>
             <span>Home</span>
           </Link>
           
@@ -35,7 +35,7 @@ function Sidebar() {
                 : "text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest/50"
             }`}
           >
-
+            <span className="material-symbols-outlined" style={{ fontVariationSettings: currentPath === "/explore" ? "'FILL' 1" : "'FILL' 0" }}>explore</span>
             <span>Explore</span>
           </Link>
           
@@ -47,7 +47,7 @@ function Sidebar() {
                 : "text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest/50"
             }`}
           >
-
+            <span className="material-symbols-outlined" style={{ fontVariationSettings: currentPath === "/library" ? "'FILL' 1" : "'FILL' 0" }}>library_music</span>
             <span>Library</span>
           </Link>
         </nav>
@@ -60,15 +60,15 @@ function Sidebar() {
       {/* Mobile Navigation (Bottom) */}
       <nav className="md:hidden fixed bottom-0 left-0 w-full z-[60] bg-surface-container/90 backdrop-blur-xl border-t border-white/5 h-16 flex justify-around items-center">
         <Link to="/home" className={`flex flex-col items-center gap-1 ${currentPath === "/home" ? "text-primary-container" : "text-on-surface-variant"}`}>
-
+          <span className="material-symbols-outlined" style={{ fontVariationSettings: currentPath === "/home" ? "'FILL' 1" : "'FILL' 0" }}>home</span>
           <span className="text-[10px] font-bold">Home</span>
         </Link>
         <Link to="/explore" className={`flex flex-col items-center gap-1 ${currentPath === "/explore" ? "text-primary-container" : "text-on-surface-variant"}`}>
-
+          <span className="material-symbols-outlined" style={{ fontVariationSettings: currentPath === "/explore" ? "'FILL' 1" : "'FILL' 0" }}>explore</span>
           <span className="text-[10px] font-bold">Explore</span>
         </Link>
         <Link to="/library" className={`flex flex-col items-center gap-1 ${currentPath === "/library" ? "text-primary-container" : "text-on-surface-variant"}`}>
-
+          <span className="material-symbols-outlined" style={{ fontVariationSettings: currentPath === "/library" ? "'FILL' 1" : "'FILL' 0" }}>library_music</span>
           <span className="text-[10px] font-bold">Library</span>
         </Link>
       </nav>

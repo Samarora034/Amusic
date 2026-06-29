@@ -56,17 +56,17 @@ function Navbar({ isHome }) {
           </nav>
         </div>
         <div className="flex items-center gap-4">
-          <button className="hidden md:flex text-on-surface-variant hover:text-primary transition-colors duration-300 font-bold">
-            [ SEARCH ]
+          <button className="hidden md:flex text-on-surface-variant hover:text-primary transition-colors duration-300">
+            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 0" }}>search</span>
           </button>
           
           <button 
             onClick={toggleDarkMode}
-            className="text-on-surface-variant hover:text-primary transition-colors duration-300 px-3 py-1 font-bold rounded-full glass-card"
+            className="text-on-surface-variant hover:text-primary transition-colors duration-300 p-2 rounded-full glass-card"
             title="Toggle Theme"
           >
-            <span>
-              {darkMode ? "[ LIGHT ]" : "[ DARK ]"}
+            <span className="material-symbols-outlined">
+              {darkMode ? "light_mode" : "dark_mode"}
             </span>
           </button>
 
@@ -87,8 +87,8 @@ function Navbar({ isHome }) {
           )}
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-on-surface font-bold">
-            [ MENU ]
+          <button className="md:hidden text-on-surface">
+            <span className="material-symbols-outlined">menu</span>
           </button>
         </div>
       </div>

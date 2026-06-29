@@ -23,10 +23,10 @@ const GlobalPlayerOverlay = () => {
               className="w-12 h-12 bg-primary/20 text-primary border border-primary/50 rounded-full flex items-center justify-center neon-glow"
             >
               {audioLoading ? (
-                <span className="font-bold text-[12px] animate-pulse">[ LOAD ]</span>
+                <span className="material-symbols-outlined animate-spin text-[24px]">sync</span>
               ) : (
-                <span className="font-bold text-[16px]">
-                  {isPlaying ? "[ || ]" : "[ > ]"}
+                <span className="material-symbols-outlined text-[28px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  {isPlaying ? "pause" : "play_arrow"}
                 </span>
               )}
             </button>
@@ -52,22 +52,22 @@ const GlobalPlayerOverlay = () => {
       {/* Right side: Minimal Controls */}
       <div className="pointer-events-auto flex gap-4 hidden sm:flex">
         <button className="text-on-surface-variant hover:text-primary transition-colors mix-blend-difference">
-          <span className="font-bold text-[20px]">[ &lt;&lt; ]</span>
+          <span className="material-symbols-outlined text-[32px]">skip_previous</span>
         </button>
         <button 
           onClick={togglePlay}
           className="text-primary hover:text-white transition-colors mix-blend-difference"
         >
           {audioLoading ? (
-            <span className="font-bold text-[20px] animate-pulse">[ LOAD ]</span>
+            <span className="material-symbols-outlined animate-spin text-[40px]">sync</span>
           ) : (
-            <span className="font-bold text-[24px]">
-              {isPlaying ? "[ || ]" : "[ > ]"}
+            <span className="material-symbols-outlined text-[40px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+              {isPlaying ? "pause_circle" : "play_circle"}
             </span>
           )}
         </button>
         <button className="text-on-surface-variant hover:text-primary transition-colors mix-blend-difference">
-          <span className="font-bold text-[20px]">[ &gt;&gt; ]</span>
+          <span className="material-symbols-outlined text-[32px]">skip_next</span>
         </button>
       </div>
       

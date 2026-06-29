@@ -17,7 +17,7 @@ function Library() {
         <h2 className="font-headline-lg text-[24px] text-primary">My Library</h2>
         <button className="flex items-center gap-3" onClick={() => { localStorage.removeItem("token"); localStorage.removeItem("user"); window.location.href = "/login"; }}>
           <div className="w-10 h-10 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center">
-            <span className="font-bold text-on-surface">[ OUT ]</span>
+            <span className="material-symbols-outlined text-on-surface">logout</span>
           </div>
         </button>
       </header>
@@ -40,7 +40,7 @@ function Library() {
             <h3 className="font-headline-lg text-[24px]">Liked Songs</h3>
             {favorites.length > 0 && (
               <button onClick={() => handlePlay(favorites[0])} className="bg-primary-container text-on-primary px-6 py-2 rounded-full font-bold flex items-center gap-2 hover:scale-105 transition-transform active:scale-95">
-                <span className="font-bold">[ PLAY ALL ]</span>
+                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>play_arrow</span>
                 Play All
               </button>
             )}
@@ -54,7 +54,7 @@ function Library() {
             </div>
           ) : (
             <div className="text-center py-20">
-              <span className="text-[64px] text-on-surface-variant/30 mb-4 block font-bold">[ NO FAVS ]</span>
+              <span className="material-symbols-outlined text-[64px] text-on-surface-variant/30 mb-4 block">favorite</span>
               <h4 className="text-[20px] text-on-surface-variant mb-2">nothing here yet</h4>
               <p className="text-on-surface-variant/70">heart some tracks and they'll show up here.</p>
             </div>

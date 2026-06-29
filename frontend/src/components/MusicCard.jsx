@@ -7,8 +7,8 @@ function MusicCard({ song, isPlaying, isFavorite, onPlay, onFavorite }) {
         <img src={song.coverUrl} alt={song.title} className="w-full h-full object-cover" />
         <div className={`absolute inset-0 bg-black/40 ${isPlaying ? "opacity-100" : "opacity-0 group-hover:opacity-100"} transition-opacity flex items-center justify-center`}>
           <div className="w-12 h-12 bg-primary-container text-on-primary rounded-full flex items-center justify-center shadow-xl">
-            <span className="font-bold text-[12px]">
-              {isPlaying ? "[ || ]" : "[ > ]"}
+            <span className="material-symbols-outlined text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+              {isPlaying ? "pause" : "play_arrow"}
             </span>
           </div>
         </div>
@@ -26,7 +26,7 @@ function MusicCard({ song, isPlaying, isFavorite, onPlay, onFavorite }) {
           className={`p-1 rounded-full transition-colors flex-shrink-0 ${isFavorite ? "text-primary-container" : "text-on-surface-variant hover:text-primary-container"}`}
           aria-label="Toggle favorite"
         >
-          <span className="font-bold text-[12px]">[ FAV ]</span>
+          <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: isFavorite ? "'FILL' 1" : "'FILL' 0" }}>favorite</span>
         </button>
       </div>
     </div>

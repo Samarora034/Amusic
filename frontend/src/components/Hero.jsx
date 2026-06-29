@@ -28,14 +28,14 @@ function Hero({ onPlay, song }) {
               onClick={() => onPlay(song)}
               className="flex items-center gap-2 px-8 py-4 bg-primary-container text-on-primary rounded-full font-bold transition-all hover:scale-105 active:scale-95 neon-glow"
             >
-              <span className="font-bold">[ PLAY ]</span>
+              <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>play_arrow</span>
               Play Now
             </button>
             <button
               onClick={() => toggleFavorite(song)}
               className="flex items-center gap-2 px-8 py-4 glass-card text-white rounded-full font-bold transition-all hover:bg-white/10 active:scale-95"
             >
-              <span className="font-bold">[ FAV ]</span>
+              <span className="material-symbols-outlined" style={{ fontVariationSettings: liked ? "'FILL' 1" : "'FILL' 0" }}>favorite</span>
               {liked ? "Saved!" : "Save for later"}
             </button>
           </div>
